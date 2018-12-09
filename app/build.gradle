@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.kwin.android.mrcocktail"
+        minSdkVersion 20
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion '28.0.3'
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+}
+ext {
+    androidSupportVersion = '1.0.0'
+    androidSupportDesign ='1.0.0-rc01'
+    butterknife = '9.0.0-SNAPSHO'
+    roomVersion = '2.0.0-rc01'
+    lifecycle_version = "2.0.0-rc01"
+    archLifecycleVersion = '1.1.1'
+    glide = '4.7.1'
+    shap_of_view = '1.4.6'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$androidSupportVersion"
+    implementation "androidx.legacy:legacy-support-v4:$androidSupportVersion"
+    implementation "androidx.cardview:cardview:$androidSupportVersion"
+    implementation "androidx.recyclerview:recyclerview:$androidSupportVersion"
+    implementation "com.google.android.material:material:$androidSupportDesign"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+    // android architecture component
+    // room
+    implementation "androidx.room:room-runtime:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
+    //for lifecycle and LiveData and ViewModel
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation  'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation "com.github.bumptech.glide:glide:$glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide"
+
+    implementation "com.github.florent37:shapeofview:$shap_of_view"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+}

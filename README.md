@@ -6,8 +6,9 @@ This Project using android architecture components for readable, maintainable an
 
 
 ## Key Features
+* Android Architecture Compnents
 * MaterialDesign List based on CardView and RecyclerView.
-* REST Client JSON using Retrofit and Gson.
+* REST Client JSON using Retrofit2 and Gson.
 * Load images with Glide.
 
 ## Handset one-pane

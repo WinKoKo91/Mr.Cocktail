@@ -1,6 +1,6 @@
-package com.kwin.android.mrcocktail.data.network;
+package com.kwin.android.mrcocktail.data.network.retrofit;
 
-import com.kwin.android.mrcocktail.util.APIConstants;
+import com.kwin.android.mrcocktail.utilities.APIConstants;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

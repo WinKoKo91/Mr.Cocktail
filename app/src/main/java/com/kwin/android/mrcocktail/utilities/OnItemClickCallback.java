@@ -1,4 +1,4 @@
-package com.kwin.android.mrcocktail.util;
+package com.kwin.android.mrcocktail.utilities;
 
 public interface OnItemClickCallback {
 

@@ -1,7 +1,6 @@
-package com.kwin.android.mrcocktail.data.network;
+package com.kwin.android.mrcocktail.data.network.retrofit;
 
-import com.kwin.android.mrcocktail.data.network.Response.CocktailsResponse;
-import com.kwin.android.mrcocktail.model.Cocktail;
+import com.kwin.android.mrcocktail.data.network.response.CocktailsResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

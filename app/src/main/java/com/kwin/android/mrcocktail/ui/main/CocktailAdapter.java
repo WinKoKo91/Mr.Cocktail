@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.kwin.android.mrcocktail.R;
 import com.kwin.android.mrcocktail.model.Cocktail;
-import com.kwin.android.mrcocktail.util.OnItemClickCallback;
+import com.kwin.android.mrcocktail.utilities.OnItemClickCallback;
 
 import java.util.List;
 
@@ -58,8 +58,8 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Cockta
         this.listener = listener;
     }
 
-    public void uploadData(final List<Cocktail> cocktails) {
-        if (cocktails == null) {
+    public void uploadData(final List<? extends Cocktail> cocktails) {
+        if (mCocktails == null) {
             this.mCocktails = cocktails;
             notifyItemRangeInserted(0, cocktails.size());
         } else {
@@ -109,7 +109,8 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Cockta
 
         public void bind(Cocktail cocktail) {
             nameTV.setText(cocktail.getName());
-            RequestOptions requestOptions = new RequestOptions().override(400, 300).placeholder(R.drawable.placeholder).centerCrop();
+            RequestOptions requestOptions = new RequestOptions()
+                    .placeholder(R.drawable.placeholder);
             Glide.with(context).load(cocktail.getThumbnail())
                     .apply(requestOptions).into(cockTialIV);
         }
